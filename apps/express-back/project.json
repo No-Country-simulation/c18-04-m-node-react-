@@ -1,0 +1,56 @@
+{
+  "name": "express-back",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/express-back/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/express-back",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/express-back/src/main.ts",
+        "tsConfig": "apps/express-back/tsconfig.app.json",
+        "assets": ["apps/express-back/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "express-back:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "express-back:build:development"
+        },
+        "production": {
+          "buildTarget": "express-back:build:production"
+        }
+      }
+    }
+  }
+}

@@ -14,8 +14,17 @@
     ],
     "sharedGlobals": []
   },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
   "targetDefaults": {
     "@nx/esbuild:esbuild": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "@nx/js:tsc": {
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
@@ -34,7 +43,41 @@
         "targetName": "test"
       },
       "exclude": ["apps/express-back-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static"
+      }
+    },
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
     }
   ],
-  "nxCloudAccessToken": "YzRhMGRmYzgtOTg1NC00MmVmLWIxN2EtZTc0ZmY2NDhhMGFifHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "YzRhMGRmYzgtOTg1NC00MmVmLWIxN2EtZTc0ZmY2NDhhMGFifHJlYWQtd3JpdGU=",
+  "generators": {
+    "@nx/react": {
+      "application": {
+        "babel": true,
+        "style": "tailwind",
+        "linter": "eslint",
+        "bundler": "vite"
+      },
+      "component": {
+        "style": "tailwind"
+      },
+      "library": {
+        "style": "tailwind",
+        "linter": "eslint",
+        "unitTestRunner": "jest"
+      }
+    }
+  }
 }

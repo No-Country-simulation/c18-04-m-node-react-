@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@c18-04-m-node-react/api-modules": ["libs/api-modules/src/index.ts"],
+      "@c18-04-m-node-react/front-components": [
+        "libs/front-components/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

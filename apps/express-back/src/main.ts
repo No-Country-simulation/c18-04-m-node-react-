@@ -1,14 +1,17 @@
-import express from 'express';
+import { ExpressService } from './services';
+import { AppRoutes } from './modules/app.routes';
+import { envs } from './config/envs';
 
-const host = process.env.HOST ?? 'localhost';
-const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+(() => {
+  main()
+})();
 
-const app = express();
+async function main() {
+  //Database connection
 
-app.get('/', (req, res) => {
-  res.send({ message: 'Hello API' });
-});
-
-app.listen(port, host, () => {
-  console.log(`[ ready ] http://${host}:${port}`);
-});
+  //api service
+  new ExpressService({
+    port: envs.API_PORT,
+    routes: AppRoutes.routes
+  }).start()
+}

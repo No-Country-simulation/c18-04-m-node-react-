@@ -1,6 +1,6 @@
-import { ExpressService } from './services';
+import { ExpressService, MongoDBService } from './services';
 import { AppRoutes } from './modules/app.routes';
-import { envs } from './config/envs';
+import { envs } from './config';
 
 (() => {
   main()
@@ -8,7 +8,13 @@ import { envs } from './config/envs';
 
 async function main() {
   //Database connection
-
+  await new MongoDBService({
+    host: envs.DB_HOST,
+    port: envs.DB_PORT,
+    username: envs.DB_USER,
+    password: envs.DB_PASSWORD,
+    databaseName: envs.DB_NAME
+  }).connect()
   //api service
   new ExpressService({
     port: envs.API_PORT,

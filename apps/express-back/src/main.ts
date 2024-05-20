@@ -1,14 +1,23 @@
-import express from 'express';
+import { ExpressService, MongoDBService } from './services';
+import { AppRoutes } from './modules/app.routes';
+import { envs } from './config';
 
-const host = process.env.HOST ?? 'localhost';
-const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+(() => {
+  main()
+})();
 
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send({ message: 'Hello API' });
-});
-
-app.listen(port, host, () => {
-  console.log(`[ ready ] http://${host}:${port}`);
-});
+async function main() {
+  //Database connection
+  await new MongoDBService({
+    host: envs.DB_HOST,
+    port: envs.DB_PORT,
+    username: envs.DB_USER,
+    password: envs.DB_PASSWORD,
+    databaseName: envs.DB_NAME
+  }).connect()
+  //api service
+  new ExpressService({
+    port: envs.API_PORT,
+    routes: AppRoutes.routes
+  }).start()
+}

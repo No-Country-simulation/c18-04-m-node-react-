@@ -5,6 +5,7 @@ export class AppRoutes {
     const router = Router()
 
     router.use('/api/car', CarRoutes.routes)
+    
     return router
   }
 }

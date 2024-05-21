@@ -1,3 +1,4 @@
-export  abstract class ForCarApiControllerRepo<T,R> {
-  abstract create(req:T,res:R):any
+export abstract class ForCarApiControllerRepo {
+  abstract create(req: any, res: any): any
+  abstract handleError(error: unknown, res: any): any
 }

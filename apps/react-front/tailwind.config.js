@@ -11,7 +11,19 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    //Config Global Colors
+    colors:{
+      'red' : 'hsl(1, 90%, 64%)',
+    },
+    //Config Screens
+    screens:{
+      'sm': '400',
+    },
+    fontFamily:{
+      custo:["sans-serif"],
+    },
+    extend:{
+    },
   },
   plugins: [],
 };

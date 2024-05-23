@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "back-dev":"npx nx run back-test:serve:development",
+    "back-dev":"npx nx run express-back:serve:development",
     "fron-dev": "npx nx run react-front:sevre:devolopment",
     "all-dev": "npx nx run-many --target=serve:development --all"
   },

@@ -1,2 +1,2 @@
-export * from './domain/entities'
+export * from './domain';
 export * from './application'

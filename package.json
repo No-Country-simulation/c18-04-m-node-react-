@@ -2,7 +2,11 @@
   "name": "@c18-04-m-node-react/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "back-dev":"npx nx run back-test:serve:development",
+    "fron-dev": "npx nx run react-front:sevre:devolopment",
+    "all-dev": "npx nx run-many --target=serve:development --all"
+  },
   "private": true,
   "dependencies": {
     "env-var": "^7.4.2",

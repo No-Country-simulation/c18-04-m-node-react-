@@ -1,5 +1,5 @@
 import { CreateUserDTO } from "../../../domain";
-import { UserEntity } from "../../../domain/user.entity";
+import { UserEntity } from "../../../domain/entities/user.entity";
 
 export abstract class ForUserDatabaseRepo {
 

@@ -5,4 +5,4 @@ export abstract class ForUserApiControllerRepo {
     abstract update(req: any, res: any): any;
     abstract delete(req: any, res: any): any; 
     abstract handleError(error: unknown, res: any): any
-};
+}

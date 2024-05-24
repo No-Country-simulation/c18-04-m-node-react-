@@ -2,7 +2,13 @@
   "name": "@c18-04-m-node-react/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "vite --host",
+    "build": "vite build",
+    "serve": "vite preview",
+    "test": "vitest"
+  },
+
   "private": true,
   "dependencies": {
     "env-var": "^7.4.2",

@@ -20,10 +20,21 @@ export class AuthController implements ForApiAuthRepo {
   };
 
   login = (req: any, res: any) => {
-    const [error, createCar] = LoginUserDto.login(req.body);
+    const [error, userData] = LoginUserDto.login(req.body);
   };
 
   register = (req: any, res: any) => {
-    const [error, createCar] = RegisterUserDto.register(req.body);
+    const [error, createUser] = RegisterUserDto.register(req.body);
+    if (error) {
+      return res.status(400).json(error);
+    }
+    this.userAuthRepo
+      .registerUser(createUser)
+      .then((user) => {
+        return res.status(201).json(user);
+      })
+      .catch((error) => {
+        this.handleError(error, res);
+      });
   };
 }

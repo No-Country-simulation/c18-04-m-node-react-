@@ -1,13 +1,11 @@
 export type LawyerCategoryTypes = {
-  id: number,
-  categoryName: string,
-  description: string
-}
+  id: number;
+};
 
-export enum LawyerType {
-  ContratosComerciales = 'Contratos Comerciales',
-  DespidosDerechoLaboral = 'Despidos y Derecho laboral',
-  ContratacionesPublicas = 'Contrataciones públicas',
-  PropiedadBienesRaices = 'Propiedad y Bienes Raíces',
-  ComercioInternacional = 'Comercio internacional'
-}
+export const LAWYER_TYPES = {
+  1: 'Contratos Comerciales',
+  2: 'Despidos y Derecho laboral',
+  3: 'Contrataciones públicas',
+  4: 'Propiedad y Bienes Raíces',
+  5: 'Comercio internacional',
+} as const;

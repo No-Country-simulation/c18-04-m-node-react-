@@ -1,4 +1,4 @@
-import { ContactInfo, AddressEntity, UserRole, LawyerType } from '../entities';
+import { ContactInfo, AddressEntity, UserRole, LawyerCategoryTypes } from '../entities';
 
 export class CreateUserDTO {
     private constructor(
@@ -11,7 +11,7 @@ export class CreateUserDTO {
         public readonly password: string,
         public readonly userRole: UserRole,
         public readonly birth: Date,
-        public readonly lawyerTypes?: LawyerType[]
+        public readonly lawyerTypes?: LawyerCategoryTypes[]
     ) {}
 
     static create(object: { [key: string]: any }): [string?, CreateUserDTO?] {

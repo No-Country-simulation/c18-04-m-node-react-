@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "back-dev":"npx nx run express-back:serve:development",
+    "back-dev": "npx nx run express-back:serve:development",
     "fron-dev": "npx nx run react-front:sevre:devolopment",
     "all-dev": "npx nx run-many --target=serve:development --all"
   },
   "private": true,
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "env-var": "^7.4.2",
-    "express": "~4.18.1",
+    "express": "^4.19.2",
     "framer-motion": "^11.2.4",
     "mongoose": "^8.4.0",
     "react": "18.3.1",
@@ -70,7 +71,7 @@
     "jest-environment-node": "^29.4.1",
     "jsdom": "~22.1.0",
     "nx": "19.0.4",
-    "postcss": "8.4.21",
+    "postcss": "^8.4.38",
     "prettier": "^2.6.2",
     "react-refresh": "^0.10.0",
     "ts-jest": "^29.1.0",

@@ -16,7 +16,7 @@ module.exports = {
       'yellow' : 'rgba(214, 186, 0, 1)',
       'darkPurple' : 'rgba(18, 9, 26, 1)',
       'lightPurple': 'rgba(164, 155, 155, 0.14)',
-      'gray' : 'rgba(164, 155, 155, 1)'
+      'grey' : 'rgba(164, 155, 155, 1)'
     },
     //Config Screens
     screens:{

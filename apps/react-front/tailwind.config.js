@@ -13,14 +13,18 @@ module.exports = {
   theme: {
     //Config Global Colors
     colors:{
-      'red' : 'hsl(1, 90%, 64%)',
+      'yellow' : 'rgba(214, 186, 0, 1)',
+      'darkPurple' : 'rgba(18, 9, 26, 1)',
+      'lightPurple': 'rgba(164, 155, 155, 0.14)',
+      'gray' : 'rgba(164, 155, 155, 1)'
     },
     //Config Screens
     screens:{
-      'sm': '400',
+      'sm': '393',
+      'xl': '1920'
     },
     fontFamily:{
-      custo:["sans-serif"],
+      'marcellus':["Marcellus SC", "sans-serif"],
     },
     extend:{
     },

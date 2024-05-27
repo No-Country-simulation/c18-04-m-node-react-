@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "back-dev": "npx nx run express-back:serve:development",
-    "fron-dev": "npx nx run react-front:sevre:devolopment",
-    "all-dev": "npx nx run-many --target=serve:development --all"
+    "front-dev": "npx nx run react-front:serve:devolopment",
+    "all-dev": "npx nx run-many --target=serve"
   },
   "private": true,
   "dependencies": {

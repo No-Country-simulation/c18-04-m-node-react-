@@ -1,14 +1,13 @@
-/* eslint-disable-next-line */
-export interface FrontComponentsProps {}
-
-
-
-export function FrontComponents(props: FrontComponentsProps) {
-  return (
-    <>
-      <h1>Welcome to FrontComponents!</h1>
-    </>
-  );
+interface FrontComponentsProps {
+  title: string
 }
 
-export default FrontComponents;
+export function FrontComponents(props: FrontComponentsProps) {
+  
+  return (
+    <>
+      <h1>{props.title}</h1>
+    </>
+  )
+
+}

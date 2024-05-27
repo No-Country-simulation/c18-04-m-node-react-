@@ -10,10 +10,8 @@ import { UserMappers } from '../mappers';
 export class AuthMongoDBRepoImpl implements ForDatasourceAuthRepo {
   async register(user: RegisterUserDto): Promise<UserEntity> {
     try {
-      const existingUser = await UserModel.find({ email: user.email });
-
+      const existingUser = await UserModel.findOne({ email: user.email });
       if (existingUser) throw CustomError.badRequest('User already exists');
-
       const newUser = await UserModel.create({
         ...user,
         //need password hash
@@ -21,7 +19,6 @@ export class AuthMongoDBRepoImpl implements ForDatasourceAuthRepo {
       });
 
       await newUser.save();
-
       return UserMappers.userModelToEntity(newUser);
     } catch (error) {
       if (error instanceof Error) {

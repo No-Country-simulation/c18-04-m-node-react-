@@ -8,7 +8,7 @@ import {
 import { Response, Request } from 'express';
 
 export class ApiAuthControllerRepoImp implements ForApiAuthRepo {
-  constructor(private readonly userAuthRepo: UserAuthRepo) {}
+  constructor(private readonly userAuthRepo: UserAuthRepo) { }
 
   handleError = (error: unknown, res: any) => {
     if (error instanceof CustomError) {
@@ -26,6 +26,7 @@ export class ApiAuthControllerRepoImp implements ForApiAuthRepo {
 
   register = (req: Request, res: Response) => {
     const [error, createUser] = RegisterUserDto.register(req.body);
+
     if (error) {
       return res.status(400).json(error);
     }

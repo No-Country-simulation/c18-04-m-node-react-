@@ -5,7 +5,10 @@
   "scripts": {
     "back-dev": "npx nx run express-back:serve:development",
     "front-dev": "npx nx run react-front:serve:devolopment",
-    "all-dev": "npx nx run-many --target=serve"
+    "all-dev": "npx nx run-many --target=serve",
+    "modules": "npx nx run api-modules:build",
+    "build": "",
+    "lint": ""
   },
   "private": true,
   "dependencies": {

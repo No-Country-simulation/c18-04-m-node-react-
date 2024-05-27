@@ -3,15 +3,17 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "back-dev":"npx nx run express-back:serve:development",
+    "back-dev": "npx nx run express-back:serve:development",
     "fron-dev": "npx nx run react-front:sevre:devolopment",
     "all-dev": "npx nx run-many --target=serve:development --all"
   },
   "private": true,
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "env-var": "^7.4.2",
     "express": "~4.18.1",
     "framer-motion": "^11.2.4",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",

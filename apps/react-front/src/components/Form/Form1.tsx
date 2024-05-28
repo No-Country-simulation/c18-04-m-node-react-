@@ -1,10 +1,26 @@
 import { Link } from 'react-router-dom';
 import './Form.modules.css';
+import { useState } from 'react';
+import { log } from 'console';
 
 export default function Form1({ setSteps }: { setSteps: React.Dispatch<React.SetStateAction<number>> }) {
 
-  const handleSubmit = (e : any) => {
+  const [username, setUsername] = useState('');
+  const [password1, setPassword1] = useState('');
+  const [password2, setPassword2] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e: any) => {
     e.preventDefault();
+
+    const results = {
+      username,
+      password1,
+      password2,
+      email
+    };
+    
+    console.log(results);
     setSteps(2);
   }
 
@@ -12,6 +28,7 @@ export default function Form1({ setSteps }: { setSteps: React.Dispatch<React.Set
     <form
       action=""
       className="flex flex-col items-center sm:items-end input mx-auto text-pastel font-Marcellus text-lg"
+      onSubmit={handleSubmit}
     >
       {/* Este es el div de first name */}
       <div className="flex mt-12 gap-8">
@@ -23,7 +40,10 @@ export default function Form1({ setSteps }: { setSteps: React.Dispatch<React.Set
           placeholder="USER NAME"
           id="username"
           type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           className="input bg-inherit border-b text-pastel border-pastel px-4 py-2"
+          autoComplete='username'
         />
       </div>
 
@@ -37,7 +57,10 @@ export default function Form1({ setSteps }: { setSteps: React.Dispatch<React.Set
           placeholder="PASSWORD"
           type="password"
           id="password1"
+          value={password1}
+          onChange={(e) => setPassword1(e.target.value)}
           className="input bg-inherit border-b text-pastel border-pastel px-4 py-2"
+          autoComplete='new-password'
         />
       </div>
 
@@ -52,7 +75,10 @@ export default function Form1({ setSteps }: { setSteps: React.Dispatch<React.Set
             placeholder="REPEAT PASSWORD"
             type="password"
             id="password2"
+            value={password2}
+            onChange={(e) => setPassword2(e.target.value)}
             className="input bg-inherit border-b text-pastel border-pastel px-4 py-2"
+            autoComplete='new-password'
           />
         </div>
       </div>
@@ -68,7 +94,10 @@ export default function Form1({ setSteps }: { setSteps: React.Dispatch<React.Set
             placeholder="EMAIL"
             type="email"
             id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="input bg-inherit border-b text-pastel border-pastel px-4 py-2"
+            autoComplete='email'
           />
         </div>
       </div>

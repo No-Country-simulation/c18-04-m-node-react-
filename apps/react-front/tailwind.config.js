@@ -10,8 +10,21 @@ module.exports = {
     ),
     ...createGlobPatternsForDependencies(__dirname),
   ],
+
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        purple: '#12091A',
+        gold: '#D6BA00',
+        gray: '#A49B9B24',
+        pastel: '#A49B9B',
+        blacke: '#12091A',
+        lightGray: '#828282',
+      },
+      fontFamily: {
+        Marcellus: ['Marcellus', 'serif'],
+      },
+    },
+    plugins: [],
   },
-  plugins: [],
 };

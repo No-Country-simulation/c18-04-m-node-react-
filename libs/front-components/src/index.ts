@@ -1,3 +1,3 @@
-export * from './componentsForm/Button';
-export * from './lib/';
-export * from './navigation/NavBar';
+export * from './lib/button'
+export * from './lib/inputText'
+export * from './lib/linkMenu'

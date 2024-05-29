@@ -25,52 +25,55 @@ const ContactInfoSchema = new mongoose.Schema<ContactInfo>({
   phone: String,
 });
 
-const UserSchema = new mongoose.Schema<UserEntity>({
-  email: {
-    type: String,
-    required: true,
+const UserSchema = new mongoose.Schema<UserEntity>(
+  {
+    email: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
+    registrationId: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: AddresSchema,
+      required: false,
+    },
+    userName: {
+      type: String,
+      required: true,
+    },
+    userRole: {
+      type: Number,
+      required: false,
+      default: 2,
+    },
+    birth: {
+      type: Date,
+      required: true,
+    },
+    contactInfo: {
+      type: ContactInfoSchema,
+      required: false,
+    },
+    lawyerTypes: {
+      type: [LawyerCategoryTypesSchema],
+      required: false,
+    },
   },
-  password: {
-    type: String,
-    required: true,
-  },
-  firstName: {
-    type: String,
-    required: true,
-  },
-  lastName: {
-    type: String,
-    required: true,
-  },
-  registrationId: {
-    type: String,
-    required: true,
-  },
-  address: {
-    type: AddresSchema,
-    required: false,
-  },
-  userName: {
-    type: String,
-    required: true,
-  },
-  userRole: {
-    type: Number,
-    required: false,
-    default: 2,
-  },
-  birth: {
-    type: Date,
-    required: true,
-  },
-  contactInfo: {
-    type: ContactInfoSchema,
-    required: false,
-  },
-  lawyerTypes: {
-    type: [LawyerCategoryTypesSchema],
-    required: false,
-  },
-});
+  { timestamps: true }
+);
 
 export const UserModel = mongoose.model<UserEntity>('user', UserSchema);

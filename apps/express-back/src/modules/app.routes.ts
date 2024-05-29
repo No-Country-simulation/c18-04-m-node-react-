@@ -6,6 +6,10 @@ export class AppRoutes {
     const router = Router();
     //AUTH
     router.use('/api', AuthRoutes.routes);
+
+    //USER
+
+    //LAWYER CASE
     
     //EXAMPLE
     router.use('/api/car', CarRoutes.routes);

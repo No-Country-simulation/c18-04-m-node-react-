@@ -6,9 +6,10 @@ import {
   UserAuthRepo,
 } from '@c18-04-m-node-react/api-modules';
 import { Response, Request } from 'express';
+import { JwtTokenUtility } from '../utilities';
 
 export class ApiAuthControllerRepoImp implements ForApiAuthRepo {
-  constructor(private readonly userAuthRepo: UserAuthRepo) { }
+  constructor(private readonly userAuthRepo: UserAuthRepo) {}
 
   handleError = (error: unknown, res: any) => {
     if (error instanceof CustomError) {
@@ -22,6 +23,19 @@ export class ApiAuthControllerRepoImp implements ForApiAuthRepo {
 
   login = (req: Request, res: Response) => {
     const [error, userData] = LoginUserDto.login(req.body);
+    if (error) {
+      return res.status(400).json(error);
+    }
+    this.userAuthRepo
+    .loginUser(userData)
+    .then((user) => {
+      const token =JwtTokenUtility.createToken(user.id,'1h')
+      return res.status(200).json(token);
+    })
+    .catch((error) => {
+      console.log('controller', error)
+        this.handleError(error, res);
+      });
   };
 
   register = (req: Request, res: Response) => {

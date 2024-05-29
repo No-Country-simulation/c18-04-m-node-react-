@@ -3,7 +3,7 @@ export class AuthPasswordUtility {
   static passwordValidate(password: string, hashedPassword: string): boolean {
     let isEqual = false;
 
-    isEqual = bcrypt.compareSync(password, hashedPassword);
+    isEqual = bcrypt.compareSync(password, hashedPassword,);
 
     return isEqual;
   }

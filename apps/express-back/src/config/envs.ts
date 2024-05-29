@@ -11,5 +11,5 @@ export const envs = {
   //API
   API_PORT: get('API_PORT').default(3000).asPortNumber(),
   //JWT
-  SERVER_SECRET_WORD :get('SERVER_SECRET_WORD ').asString()
+  SERVER_SECRET_WORD :get('SERVER_SECRET_WORD').asString()
  }

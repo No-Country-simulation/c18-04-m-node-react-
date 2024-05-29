@@ -13,7 +13,7 @@ export class ApiAuthRepoImp implements UserAuthRepo {
 
   }
 
-  loginUser(user: LoginUserDto): Promise<UserEntity> {
-    throw new Error('Method not implemented.');
+  async loginUser(user: LoginUserDto): Promise<UserEntity> {
+    return await this.authDatasource.login(user);
   }
 }

@@ -1,12 +1,10 @@
-import { ContextProvider } from "../context/Context";
 
 export function App() {
+
   return (
-    <ContextProvider>
-      <div>
-        
+      <div className="bg-darkPurple w-full h-screen">
+
       </div>
-    </ContextProvider>
   );
 }
 

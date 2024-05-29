@@ -5,6 +5,7 @@ import {
   LoginUserDto,
   RegisterUserDto,
   ForDatasourceUserStatusListRepo,
+  userStatusTypes,
 } from '@c18-04-m-node-react/api-modules';
 import { UserModel } from './user.mongodb.model';
 import { UserMappers } from '../mappers';
@@ -44,7 +45,28 @@ export class AuthMongoDBRepoImpl implements ForDatasourceAuthRepo {
   async login(user: LoginUserDto): Promise<UserEntity> {
     try {
       const existingUser = await UserModel.findOne({ email: user.email });
-      if (!existingUser) throw CustomError.badRequest('User not found');
+
+      const userAvailableStatus =
+        await this.userStatusListRepo.getUserStatusByUserId(
+          existingUser._id.toString()
+        );
+
+      if (userAvailableStatus.status != 1)
+        throw CustomError.badRequest(
+          `user is ${userStatusTypes[userAvailableStatus.status]}`
+        );
+
+      if (!existingUser)
+        throw CustomError.badRequest('user email or password is wrong');
+
+      const paswordValidate = AuthPasswordUtility.passwordValidate(
+        user.password,
+        existingUser.password
+      );
+//pendiente arreglar
+      if (!paswordValidate) {
+        throw CustomError.badRequest('user email or password is wrong');
+      }
 
       return UserMappers.userModelToEntity(existingUser);
     } catch (error) {

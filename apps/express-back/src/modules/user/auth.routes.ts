@@ -14,6 +14,8 @@ export class AuthRoutes {
     const authController = new ApiAuthControllerRepoImp(authRepository);
 
     route.post('/register', authController.register);
+
+    route.post('/login', authController.login);
     return route;
   }
 }

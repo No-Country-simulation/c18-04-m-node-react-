@@ -3,7 +3,6 @@ import { envs } from '../../../../config/';
 
 export class JwtTokenUtility {
   static  createToken(userId: string, expirerTime = '1h'): string {
-    console.log('first', envs.SERVER_SECRET_WORD)
     return jwt.sign({ userId: userId }, envs.SERVER_SECRET_WORD, {
       expiresIn: expirerTime,
     });

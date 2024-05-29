@@ -24,18 +24,22 @@ export class UserMappers {
     if (!address) throw CustomError.badRequest('address not found');
     if (!contactInfo) throw CustomError.badRequest('contact info not found');
     if (!lawyerTypes) throw CustomError.badRequest('lawyer types not found');
+    if (!userRole) throw CustomError.badRequest('user role not found');
+    if (!userName) throw CustomError.badRequest('username not found');
 
-    return new UserEntity(
-      id || _id,
-      firstName,
-      lastName,
-      email,
-      userName,
-      userRole,
-      birth,
-      address,
-      contactInfo,
-      lawyerTypes
-    );
+    return new UserEntity({
+      id: id || _id,
+      address: address,
+      birth: birth,
+      contactInfo: contactInfo,
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      lawyerTypes: lawyerTypes,
+      userRole: userRole,
+      password: '',
+      registrationId: '',
+      userName: userName,
+    });
   }
 }

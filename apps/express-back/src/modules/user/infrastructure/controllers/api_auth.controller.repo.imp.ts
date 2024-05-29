@@ -33,7 +33,6 @@ export class ApiAuthControllerRepoImp implements ForApiAuthRepo {
       return res.status(200).json(token);
     })
     .catch((error) => {
-      console.log('controller', error)
         this.handleError(error, res);
       });
   };

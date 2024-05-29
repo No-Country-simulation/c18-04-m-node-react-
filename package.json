@@ -11,7 +11,7 @@
     "lint": ""
   },
   "private": true,
-    "dependencies": {
+  "dependencies": {
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "env-var": "^7.4.2",

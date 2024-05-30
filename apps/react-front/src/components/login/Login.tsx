@@ -7,7 +7,7 @@ function Login() {
   const {setMenuApp} = useContext(Context);
 
   return (
-    <div className='bg-lightPurple flex flex-col justify-between items-center w-full h-3/5 md:w-1/2 md:min-h-[200px]'>
+    <div className='bg-lightPurple flex flex-col justify-between items-center w-full h-[70%] min-h-[200px] md:w-1/2'>
       <div className="flex justify-center items-center h-1/6 w-4/5">
           <h2 className="text-yellow font-marce text-base sm:text-2xl">
             Login

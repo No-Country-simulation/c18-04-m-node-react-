@@ -10,6 +10,7 @@ module.exports = {
     ),
     ...createGlobPatternsForDependencies(__dirname),
   ],
+
   theme: {
     extend: {
       //Config Global Colors
@@ -24,6 +25,6 @@ module.exports = {
         'marce': ['Marcellus SC', 'serif'],
       },
     },
+
   },
-  plugins: [],
 };

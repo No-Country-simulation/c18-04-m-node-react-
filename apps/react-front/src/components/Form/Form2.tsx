@@ -41,7 +41,7 @@ export default function Form2({
       {/* Este es el div de first name */}
       <div className="flex mt-6 md:mt-12 gap-8">
         <label htmlFor="firstname" className="mt-2">
-          <img src="/public/svg/Vector-3.svg" alt="" />
+          <img src="/svg/Vector-3.svg" alt="" />
         </label>
 
         <input
@@ -58,7 +58,7 @@ export default function Form2({
       {/* Este es el div de lastname */}
       <div className="flex mt-6 md:mt-12 gap-8">
         <label htmlFor="lastname" className="mt-2">
-          <img src="/public/svg/Vector-3.svg" alt="" />
+          <img src="/svg/Vector-3.svg" alt="" />
         </label>
 
         <input

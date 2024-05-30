@@ -10,4 +10,6 @@ export const envs = {
   DB_PASSWORD: get('DB_PASSWORD').required().asString(),
   //API
   API_PORT: get('API_PORT').default(3000).asPortNumber(),
+  //JWT
+  SERVER_SECRET_WORD :get('SERVER_SECRET_WORD').asString()
  }

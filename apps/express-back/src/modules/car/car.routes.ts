@@ -7,8 +7,6 @@ export class CarRoutes {
     const carRepository = new CarRepoImpl(carDatasorce)
     const carController = new CarApiControllerRepoImpl(carRepository)
 
-
-
     route.post('/create', carController.create)
     return route
   }

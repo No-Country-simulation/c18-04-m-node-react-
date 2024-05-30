@@ -1,10 +1,12 @@
 
+import Home from "../pages/Home";
+
 export function App() {
 
   return (
-      <div className="bg-darkPurple w-full h-screen flex justify-center items-center">
-
-      </div>
+    <div className="bg-darkPurple w-full h-screen">
+      <Home/>
+    </div>
   );
 }
 

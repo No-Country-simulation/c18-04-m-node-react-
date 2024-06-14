@@ -65,3 +65,30 @@ Nx comes with local caching already built-in (check your `nx.json`). On CI you m
 
 Run `npx nx graph` to show the graph of the workspace.
 It will show tasks that you can run with Nx.
+
+
+members:
+Aliesky Perez - Backend
+Walter Sánchez - Frontend
+Juan José Oviedo Díaz  - Frontend
+Daniel Sanabria - Frontend  [![LinkedIn](https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png)]([https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/danielsanabriarivera/))
+Emanuel Pesci - Frontend
+Cristian Sombra - Backend
+Matías Quirico - Backend
+
+
+frontend technologies
+
+* React
+* Framer Motion
+* jest
+* axios
+* tailwind
+
+Backend technologies
+
+* Node
+* Express
+* Mongoose
+* Mongodb
+
